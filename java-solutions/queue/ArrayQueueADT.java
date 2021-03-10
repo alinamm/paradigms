@@ -19,10 +19,10 @@ public class ArrayQueueADT {
     private int tail = 0;
 
 
-    //Pred: element != null
+    //Pred: element != null && queue != null
     //Post: n = (n' + 1) && a[n] = element && forall i = 1..n': a[i] = a'[i]
-    public static void enqueue(queue.ArrayQueueADT queue, Object element) {
-        assert element != null;
+    public static void enqueue(ArrayQueueADT queue, Object element) {
+        assert element != null && queue != null;
         ensureCapacity(queue, queue.size + 1);
 
         queue.elements[queue.tail % queue.elements.length] = element;
@@ -42,9 +42,9 @@ public class ArrayQueueADT {
         }
     }
 
-    //Pred: n > 0
+    //Pred: n > 0 && queue != null
     //Post: n = (n' - 1) && forall i = 2..n': a[i] == a'[i] && R == a'[1]
-    public static Object dequeue(queue.ArrayQueueADT queue) {
+    public static Object dequeue(ArrayQueueADT queue) {
         assert queue.size > 0;
 
         Object value;
@@ -58,43 +58,48 @@ public class ArrayQueueADT {
         return value;
     }
 
-    //Pred: n > 0
+    //Pred: n > 0 && queue != null
     //Post: R == a[1] && Immutable
-    public static Object element(queue.ArrayQueueADT queue) {
+    public static Object element(ArrayQueueADT queue) {
         assert queue.size > 0;
 
         return queue.elements[queue.head % queue.elements.length];
     }
 
-    //Pred: true
+    //Pred: true && queue != null
     //Post: R == n && Immutable
-    public static int size(queue.ArrayQueueADT queue) {
+    public static int size(ArrayQueueADT queue) {
+        assert queue != null;
         return queue.size;
     }
 
-    //Pred: true
+    //Pred: true && queue != null
     //Post: n == 0
-    public static void clear(queue.ArrayQueueADT queue) {
+    public static void clear(ArrayQueueADT queue) {
+        assert queue != null;
         queue.elements = new Object[2];
         queue.head = queue.tail;
         queue.size = 0;
     }
 
-    //Pred: true
+    //Pred: true && queue != null
     //Post: R == n > 0 && Immutable
-    public static boolean isEmpty(queue.ArrayQueueADT queue) {
+    public static boolean isEmpty(ArrayQueueADT queue) {
+        assert queue != null;
         return queue.head == queue.tail;
     }
 
-    //Pred: i >= 1 && i <= n
+    //Pred: i >= 1 && i <= n && queue != null
     //Post: R == a[i] && Immutable
-    public static Object get(queue.ArrayQueueADT queue, int i) {
+    public static Object get(ArrayQueueADT queue, int i) {
+        assert queue != null;
         return queue.elements[(queue.head + i) % queue.elements.length];
     }
 
-    //Pred: e != null && i >= 1 && i <= n
+    //Pred: e != null && i >= 1 && i <= n && queue != null
     //Post: Immutable && a[i] == e && n == n' && for all j = 1..n, j != i: a[j] == a'[j]
-    public static void set(queue.ArrayQueueADT queue, int i, Object e) {
+    public static void set(ArrayQueueADT queue, int i, Object e) {
+        assert queue != null;
         queue.elements[(queue.head + i) % queue.elements.length] = e;
     }
 }
