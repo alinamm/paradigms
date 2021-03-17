@@ -68,29 +68,16 @@ public abstract class AbstractQueue implements Queue {
     //Pred: i >= 1 && i <= n
     //Post: R == a[i] && Immutable
     public Object get(int i) {
-        Object[] a = new Object[size()];
-        Object res = 0;
-        int s = size();
-        for (int j = 0; j < s; j++) {
-            if (j == i) {
-                res = element();
-            }
-            a[j] = dequeue();
-        }
-        for (int j = 0; j < s; j++) {
-            enqueue(a[j]);
-        }
-        return res;
+        Object[] a = toArray();
+        return a[i];
     }
 
     //Pred: e != null && i >= 1 && i <= n
     //Post: a[i] == e && n == n' && for all j = 1..n, j != i: a[j] == a'[j]
     public void set(int i, Object e) {
-        Object[] a = new Object[size()];
+        Object[] a = toArray();
         int s = size();
-        for (int j = 0; j < s; j++) {
-            a[j] = dequeue();
-        }
+        clear();
         for (int j = 0; j < s; j++) {
             if (j == i) {
                 enqueue(e);

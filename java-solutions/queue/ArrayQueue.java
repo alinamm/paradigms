@@ -1,16 +1,5 @@
 package queue;
 
-/*
-Model:
-[a1, a2, ...an]
-n -- размер очереди
-
-Inv:
-n >= 0
-forall i = 1..n: a[i] != null
-
-Immutable: n == n' && forall i = 1..n: a[i] == a'[i]
- */
 
 import java.util.Arrays;
 
