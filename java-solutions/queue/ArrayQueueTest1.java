@@ -1,13 +1,13 @@
 package queue;
 
 public class ArrayQueueTest1 {
-    public static void fill(ArrayQueue queue) {
+    public static void fill(LinkedQueue queue) {
         for (int i = 0; i < 10; i++) {
             queue.enqueue(i);
         }
     }
 
-    public static void dump(ArrayQueue queue) {
+    public static void dump(LinkedQueue queue) {
         while (!queue.isEmpty()) {
             System.out.println(queue.size() + " " +
                     queue.element() + " " + queue.dequeue());
@@ -15,9 +15,8 @@ public class ArrayQueueTest1 {
     }
 
     public static void main(String[] args) {
-        ArrayQueue queue = new ArrayQueue();
+        LinkedQueue queue = new LinkedQueue();
         fill(queue);
         dump(queue);
     }
 }
-
