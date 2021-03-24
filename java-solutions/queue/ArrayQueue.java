@@ -1,5 +1,6 @@
 package queue;
 
+<<<<<<< HEAD
 
 import java.util.Arrays;
 
@@ -45,3 +46,7 @@ public class ArrayQueue extends AbstractQueue {
 
 }
 
+=======
+public class ArrayQueue {
+}
+>>>>>>> 0ad04519b817984df6dd89162e4efc2c1f40d8ee
