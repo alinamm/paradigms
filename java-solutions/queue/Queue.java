@@ -14,7 +14,7 @@ Immutable: n == n' && forall i = 1..n: a[i] == a'[i]
 
 public interface Queue {
     //Pred: element != null
-    //Post: n = (n' + 1) && a[n] = element && forall i = 1..n': a[i] = a'[i]
+    //Post: n = (n' + 1) && a[n] == element && forall i = 1..n': a[i - 1] = a'[i]
     void enqueue(Object e);
 
     //Pred: n > 0

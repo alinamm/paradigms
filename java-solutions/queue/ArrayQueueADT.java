@@ -1,6 +1,5 @@
 package queue;
 
-<<<<<<< HEAD
 /*
 Model:
 [a1, a2, ...an]
@@ -103,7 +102,4 @@ public class ArrayQueueADT {
         assert queue != null;
         queue.elements[(queue.head + i) % queue.elements.length] = e;
     }
-=======
-public class ArrayQueueADT {
->>>>>>> 0ad04519b817984df6dd89162e4efc2c1f40d8ee
 }

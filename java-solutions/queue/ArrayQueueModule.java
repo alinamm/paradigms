@@ -1,6 +1,5 @@
 package queue;
 
-<<<<<<< HEAD
 
 
 public class ArrayQueueModule {
@@ -87,7 +86,4 @@ public class ArrayQueueModule {
     public static void set(int i, Object e) {
         elements[(head + i) % elements.length] = e;
     }
-=======
-public class ArrayQueueModule {
->>>>>>> 0ad04519b817984df6dd89162e4efc2c1f40d8ee
 }

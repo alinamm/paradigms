@@ -1,6 +1,16 @@
 package queue;
 
-<<<<<<< HEAD
+/*
+Model:
+[a1, a2, ...an]
+n -- размер очереди
+
+Inv:
+n >= 0
+forall i = 1..n: a[i] != null
+
+Immutable: n == n' && forall i = 1..n: a[i] == a'[i]
+ */
 
 import java.util.Arrays;
 
@@ -46,7 +56,3 @@ public class ArrayQueue extends AbstractQueue {
 
 }
 
-=======
-public class ArrayQueue {
-}
->>>>>>> 0ad04519b817984df6dd89162e4efc2c1f40d8ee
